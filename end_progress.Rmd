@@ -1,0 +1,76 @@
+---
+title: "Madagascar iCCM Endline"
+author: "Dean and Friends"
+date: "`r format(Sys.time(), '%A %d %B %Y')`"
+output: 
+  html_document:
+    code_folding: hide
+    highlight: zenburn
+    number_sections: yes
+    theme: spacelab
+    toc: yes
+    toc_collapse: no
+    toc_depth: 4
+    toc_float: yes
+    css: C:/Users/omp2/OneDrive - CDC/Madagascar_10_12_19/endline/mada_2_the_sequel/style.css
+    includes:
+    #  before_body: phase_2_head.html
+      in_header: header.html
+---
+
+
+<div class="watermark">PRELIMINARY</div>
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      collapse = TRUE,
+                      fig.width = 7,
+                      fig.height = 6,
+                      dpi = 500,
+                      warning = FALSE,
+                      message = FALSE)
+
+```
+
+
+
+
+<!-- ======================================================= -->
+<!-- ======================================================= -->
+<!-- ======================================================= -->
+
+# Project Overview {.tabset .tabset-fade .tabset-pills}
+
+# Loading stuff {.tabset .tabset-fade .tabset-pills}
+## Packages
+```{r}
+renv::install("rio")
+pacman::p_load(tmap, 
+               Hmisc,
+               here,
+               sf, 
+               survey,
+               janitor, 
+               linelist, 
+               lubridate, 
+               purrr,
+               tidyverse)
+```
+
+## Functions
+Bespoke functions are sourced through a separate R script for ease of reference.
+It is tempting to place functions adjacent to where used in the scripts, but this 
+can make them difficult to find when needing to alter/review.
+```{r}
+source(functions.R)
+```
+
+## Data
+Data cleaning and variable creation are also sourced through R scripts to keep 
+wrangling/manipulations centrally located.
+```{r}
+source(data_cleaning.R)
+source(new_variables.R)
+```
+
