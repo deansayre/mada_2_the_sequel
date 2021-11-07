@@ -45,7 +45,6 @@ knitr::opts_chunk$set(echo = TRUE,
 # Loading stuff {.tabset .tabset-fade .tabset-pills}
 ## Packages
 ```{r}
-renv::install("rio")
 pacman::p_load(tmap, 
                Hmisc,
                here,
